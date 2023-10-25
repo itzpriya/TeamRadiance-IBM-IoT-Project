@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bus Information</title>
+    <link ref="stylesheet" type="text/css" href="C:\Users\Mahendran\OneDrive\Desktop\IOT PROJ\image.css">
+    
+  </head>
+  <style>
+  body{
+    background-image:url(https://img.freepik.com/free-photo/hotel-reception-unfocused_1203-1209.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+
+  #date, #time {
+    font-size: 50px;
+  }
+  
+  h1 {
+    font-size: 60px;
+  }
+  
+  .table-container {
+    width: 45%;
+  }
+  
+  .table-container.left {
+    float: left;
+    margin-right: 20px;
+  }
+  
+  .table-container.right {
+    float: right;
+    margin-left: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #a09b9b;
+  }
+  
+  th {
+    background-color: #b4afaffe;
+  }
+  
+  .table-container h2 {
+    font-size: 50px;
+  }
+  h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  h2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  }
+  table{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:20px;
+    
+  }
+  script{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  </style>
+
+  <body>
+    <center><h1>BUS INFORMATION</h1></center>
+    <div class="container">
+      <span id="date"></span>
+      <span id="time"></span>
+    </div>
+    <div class="table-container left">
+      <h2>Bus Entered</h2>
+      <b><table>
+        <tr>
+          <b><th>Bus No</th></b>
+          <b><th>Route</th></b>
+          <b><th>Status</th></b>
+          <b><th>Time</th></b>
+        </tr>
+        <tr>
+          <b><td>121C</td></b>
+        <b><td>Ennore - C.M.B.T.</td></b>
+        <b><td>Entered</td></b>
+        <b><td> 10:30:00 AM</td></b>
+        </tr>
+        <tr>
+        <b><td>12C</td></b>
+        <b><td>T-nagar - Vadapalani</td></b>
+        <b><td>Entered</td></b>
+        <b>  <td> 10:20:57 AM</td></b>
+        </tr>
+        <tr>
+        <b><td>15B</td></b>
+        <b><td>Broadway - Vadapalani B.S</td></b>
+        <b><td>Entered</td></b>
+        <b><td> 10:18:51 AM</td></b>
+        </tr>
+        <tr>
+        <b><td>15F</td></b>
+        <b><td>Broadway - C.M.B.T.</td></b>
+        <b><td>Entered</td></b>
+        <b><td> 10:11:37 AM</td></b>
+        </tr>
+        <tr>
+        <b><td>27B</td></b>
+        <b> <td>C.M.B.T. - Anna Square</td></b>
+        <b><td>Entered</td></b>
+        <b><td> 09:27:15 AM</td></b>
+        </tr>
+      </table></b>
+    </div>
+    
+    <div class="table-container right">
+      <h2>Bus Exited</h2>
+      <b><table>
+        <tr>
+        <b><th>Bus No</th></b>
+      <b><th>Route</th></b>
+    <b><th>Status</th></b>
+  <b><th>Time</th></b>
+        </tr>
+        <tr>
+        <b><td>72</td></b>
+      <b><td>Vadapalani-Broadway</td></b>
+    <b><td>Exited</td></b>
+  <b> <td>10:35:00 AM</td></b>
+        </tr>
+        <tr>
+        <b><td>121G</td></b>
+      <b><td>Kaviarasu Kannadasan Nagar-CMBT</td></b>
+    <b><td>Exited</td></b>
+  <b><td>10:25:15 AM</td></b>
+        </tr>
+        <tr>
+        <b><td>159E</th></b>
+        <b><td>Ennore-CMBT</th></b>
+        <b><td>Exited</th></b>
+        <b><td>10:17:37 AM</th></b>
+        </tr>
+        <tr>
+        <b><td>15BNS</th></b>
+        <b><td>Broadway-CMBT</th></b>
+        <b><td>Exited</th></b>
+        <b><td>10:11:37 AM</th></b>
+        </tr>
+        <tr>
+        <b><td>23M</th></b>
+        <b> <td>Thiruvanmiyur</th></b>
+        <b><td>Exited</th></b>
+        <b><td>10:07:07 AM</th></b>
+        </tr>
+      </table></b>
+    </div>
+
+    <script>
+      // create a function to update the date and time
+      function updateDateTime() {
+        // create a new `Date` object
+        const now = new Date();
+        
+        // get the current date and time as strings
+        const currentDate = now.toLocaleDateString();
+        const currentTime = now.toLocaleTimeString();
+      
+        // update the `textContent` property of the `span` elements with the respective ids
+        document.querySelector('#date').textContent = currentDate;
+        document.querySelector('#time').textContent = currentTime;
+      }
+
+      // call the `updateDateTime` function every second
+      setInterval(updateDateTime, 1000);
+    </script>
+       
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+
+    <script>
+        // Your Firebase web app's configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCIT03heHx3ib6Vcyw9wk7xk_uJlCwzQMY",
+            authDomain: "digital-signage-68165.firebaseapp.com",
+            databaseURL: "https://digital-signage-68165-default-rtdb.firebaseio.com",
+            projectId: "digital-signage-68165",
+            storageBucket: "digital-signage-68165.appspot.com",
+            messagingSenderId: "797024346735",
+            appId: "1:797024346735:web:ba9d0b910677923546239a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+  // ...
+  // The value of `databaseURL` depends on the location of the database
+  databaseURL: "https://digital-signage-68165-default-rtdb.firebaseio.com",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
+
+
+        let enteredBusesList = document.getElementById("enteredBuses");
+        let exitedBusesList = document.getElementById("exitedBuses");
+
+        // Get reference to buses node in the Firebase Real-time Database
+        let busesRef = firebase.database().ref('buses');
+
+        busesRef.on('value', (snapshot) => {
+            const data = snapshot.val();
+            // Clear lists
+            enteredBusesList.innerHTML = '';
+            exitedBusesList.innerHTML = '';
+
+            for (let bus in data) {
+                let listItem = document.createElement("li");
+                listItem.textContent = `Bus No: ${bus}, Route: ${data[bus].route}, Timestamp: ${data[bus].timestamp}`;
+
+                if (data[bus].status === "Entered") {
+                    enteredBusesList.appendChild(listItem);
+                } else if (data[bus].status === "Exited") {
+                    exitedBusesList.appendChild(listItem);
+                }
+            }
+        });
+        </script>
+
+  </body>
+</html>
+
+
+
